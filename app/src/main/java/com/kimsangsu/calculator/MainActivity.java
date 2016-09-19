@@ -32,8 +32,17 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.dot).setOnClickListener(numbtnClickListner);
         findViewById(R.id.bracket).setOnClickListener(numbtnClickListner);
 
+        //symbol Button Action
+        findViewById(R.id.del).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.mod).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.min).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.add).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.equal).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.ac).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.div).setOnClickListener(symbolBtnClickListner);
+        findViewById(R.id.mul).setOnClickListener(symbolBtnClickListner);
     }
-
+        //number Button Action Method
     Button.OnClickListener numbtnClickListner = new Button.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -143,6 +152,14 @@ public class MainActivity extends AppCompatActivity {
                     result.setText(totalString);
                     break;
             }
+        }
+    };
+
+    //symbol Button Action Method
+    Button.OnClickListener symbolBtnClickListner = new Button.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
         }
     };
 }
