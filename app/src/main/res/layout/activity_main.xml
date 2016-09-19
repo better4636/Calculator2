@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:id="@+id/editText"
+        android:textColor="#ffffff"
+        android:textSize="40sp"/>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/btnlayout"
+        >
+        <Button android:text="1" android:id="@+id/num1" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="2" android:id="@+id/num2" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="3" android:id="@+id/num3" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="4" android:id="@+id/num4" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="5" android:id="@+id/num5" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="6" android:id="@+id/num6" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="7" android:id="@+id/num7" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="8" android:id="@+id/num8" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="9" android:id="@+id/num9" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="0" android:id="@+id/num0" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="." android:id="@+id/dot" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="( )" android:id="@+id/bracket" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+    </GridLayout>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/symbol1"
+        android:layout_above="@+id/btnlayout"
+        android:layout_alignStart="@+id/btnlayout">
+        <Button android:text="AC" android:id="@+id/ac" android:textSize="40sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="/" android:id="@+id/div" android:textSize="40sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="*" android:id="@+id/mul" android:textSize="40sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/symbol2"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/btnlayout"
+        >
+        <Button android:text="del" android:id="@+id/del" android:textSize="40sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="%" android:id="@+id/mod" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="-" android:id="@+id/min" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="+" android:id="@+id/add" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+        <Button android:text="=" android:id="@+id/equal" android:textSize="50sp"
+            android:background="#000000" android:textColor="#ffffff"/>
+    </GridLayout>
+
+</RelativeLayout>
