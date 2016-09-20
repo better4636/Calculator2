@@ -293,6 +293,7 @@ public class MainActivity extends AppCompatActivity {
             int res;
             String resultstr;
             switch (view.getId()) {
+              // equal Button Action
                 case R.id.equal:
                     if(valueString != null)
                         postStack.add(Integer.parseInt(valueString));
@@ -336,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     isEqulBtnClick = true;
                     break;
-
+                    // AC Button Action
                 case R.id.ac:
                     totalString = null;
                     valueString = null;
