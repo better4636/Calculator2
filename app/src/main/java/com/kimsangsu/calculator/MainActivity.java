@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Queue<Object> postStack;
     private Stack<Object> operatorStack;
     private Stack<Object> calculatorStack;
+    private boolean isEqulBtnClick = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,130 +62,148 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.num0:
-                    if (totalString == null) {
-                        totalString = "0";
-                    } else {
-                        totalString += "0";
-                        valueString += "0";
+                    if(!isEqulBtnClick) {
+                        if (totalString == null) {
+                            totalString = "0";
+                        } else {
+                            totalString += "0";
+                            valueString += "0";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num1:
-                    if ((totalString == null)) {
-                        totalString = "1";
-                        valueString = "1";
-                    } else {
-                        totalString += "1";
-
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "1";
                             valueString = "1";
-                        else
-                            valueString += "1";
+                        } else {
+                            totalString += "1";
+                            if (valueString == null)
+                                valueString = "1";
+                            else
+                                valueString += "1";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num2:
-                    if ((totalString == null)) {
-                        totalString = "2";
-                        valueString = "2";
-                    } else {
-                        totalString += "2";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "2";
                             valueString = "2";
-                        else
-                            valueString += "2";
-
+                        } else {
+                            totalString += "2";
+                            if (valueString == null)
+                                valueString = "2";
+                            else
+                                valueString += "2";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num3:
-                    if ((totalString == null)) {
-                        totalString = "3";
-                        valueString = "3";
-                    } else {
-                        totalString += "3";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "3";
                             valueString = "3";
-                        else
-                            valueString += "3";
+                        } else {
+                            totalString += "3";
+                            if (valueString == null)
+                                valueString = "3";
+                            else
+                                valueString += "3";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num4:
-                    if ((totalString == null)) {
-                        totalString = "4";
-                        valueString = "4";
-                    } else {
-                        totalString += "4";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "4";
                             valueString = "4";
-                        else
-                            valueString += "4";
+                        } else {
+                            totalString += "4";
+                            if (valueString == null)
+                                valueString = "4";
+                            else
+                                valueString += "4";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num5:
-                    if ((totalString == null)) {
-                        totalString = "5";
-                        valueString = "5";
-                    } else {
-                        totalString += "5";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "5";
                             valueString = "5";
-                        else
-                            valueString += "5";
+                        } else {
+                            totalString += "5";
+                            if (valueString == null)
+                                valueString = "5";
+                            else
+                                valueString += "5";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num6:
-                    if ((totalString == null)) {
-                        totalString = "6";
-                        valueString = "6";
-                    } else {
-                        totalString += "6";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "6";
                             valueString = "6";
-                        else
-                            valueString += "6";
+                        } else {
+                            totalString += "6";
+                            if (valueString == null)
+                                valueString = "6";
+                            else
+                                valueString += "6";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num7:
-                    if ((totalString == null)) {
-                        totalString = "7";
-                        valueString = "7";
-                    } else {
-                        totalString += "7";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "7";
                             valueString = "7";
-                        else
-                            valueString += "7";
+                        } else {
+                            totalString += "7";
+                            if (valueString == null)
+                                valueString = "7";
+                            else
+                                valueString += "7";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num8:
-                    if ((totalString == null)) {
-                        totalString = "8";
-                        valueString = "8";
-                    } else {
-                        totalString += "8";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "8";
                             valueString = "8";
-                        else
-                            valueString += "8";
+                        } else {
+                            totalString += "8";
+                            if (valueString == null)
+                                valueString = "8";
+                            else
+                                valueString += "8";
+                        }
                     }
                     result.setText(totalString);
                     break;
                 case R.id.num9:
-                    if ((totalString == null)) {
-                        totalString = "9";
-                        valueString = "9";
-                    } else {
-                        totalString += "9";
-                        if(valueString == null)
+                    if(!isEqulBtnClick) {
+                        if ((totalString == null)) {
+                            totalString = "9";
                             valueString = "9";
-                        else
-                            valueString += "9";
+                        } else {
+                            totalString += "9";
+                            if (valueString == null)
+                                valueString = "9";
+                            else
+                                valueString += "9";
+                        }
                     }
                     result.setText(totalString);
                     break;
@@ -234,6 +253,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             result.setText(totalString);
+            if(isEqulBtnClick) {
+                isEqulBtnClick = false;
+            }
             /* 우선순위 계산하여 스택에 푸쉬
             *  operatorStack에 마지막으로 들어간 연산자 보다 우선순위가 크면 그냥 푸쉬
             *
@@ -312,12 +334,14 @@ public class MainActivity extends AppCompatActivity {
                         valueString = resultstr;
                         totalString = resultstr;
                     }
+                    isEqulBtnClick = true;
                     break;
 
                 case R.id.ac:
                     totalString = null;
                     valueString = null;
                     result.setText("");
+                    isEqulBtnClick = false;
                     break;
             }
         }
