@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     result.setText(totalString);
                     break;
-                case R.id.dot:
+                /*case R.id.dot:
                     if ((totalString == null)) {
                         totalString = "0.";
                         valueString = "0.";
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                             valueString += ".";
                     }
                     result.setText(totalString);
-                    break;
+                    break;*/
             }
         }
     };
@@ -209,7 +209,8 @@ public class MainActivity extends AppCompatActivity {
     Button.OnClickListener symbolBtnClickListner = new Button.OnClickListener() {
         @Override
         public void onClick(View view) {
-            postStack.add(Integer.parseInt(valueString)); // 피연산자 푸쉬
+            if(valueString != null)
+                postStack.add(Integer.parseInt(valueString)); // 피연산자 푸쉬
             switch (view.getId()) {
                 case R.id.mul:
                     op = "*";
@@ -271,7 +272,8 @@ public class MainActivity extends AppCompatActivity {
             String resultstr;
             switch (view.getId()) {
                 case R.id.equal:
-                    postStack.add(Integer.parseInt(valueString));
+                    if(valueString != null)
+                        postStack.add(Integer.parseInt(valueString));
                    while(operatorStack.size() != 0)
                         postStack.add(operatorStack.pop());
 
@@ -304,9 +306,12 @@ public class MainActivity extends AppCompatActivity {
                             calculatorStack.push(postStack.poll());
                         }
                     }
-                    resultstr = String.valueOf(calculatorStack.pop());
-                    result.setText(resultstr);
-                    totalString = null;
+                    if(!calculatorStack.isEmpty()) {
+                        resultstr = String.valueOf(calculatorStack.pop());
+                        result.setText(resultstr);
+                        valueString = resultstr;
+                        totalString = resultstr;
+                    }
                     break;
 
                 case R.id.ac:
