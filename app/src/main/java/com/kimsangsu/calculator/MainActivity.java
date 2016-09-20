@@ -233,18 +233,30 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
             result.setText(totalString);
-            //우선순위 계산하여 스택에 푸쉬
+            /* 우선순위 계산하여 스택에 푸쉬
+            *  operatorStack에 마지막으로 들어간 연산자 보다 우선순위가 크면 그냥 푸쉬
+            *
+            *  operatorStack에 마지막으로 들어간 연산자 보다 우선순위가 같으면
+                     operatorStack 맨위의 연산자 pop하여 postStack에 push후 op를 연산자 스택에 푸쉬
+
+            *  operatorStack에 마지막으로 들어간 연산자 보다 우선순위가 작으면
+                     기존에 operatorStack에 들어있던 연산자 모두 postStack에 push 후 op를 operatorStack
+                     스택에 푸쉬
+            */
+
             if(operatorStack.isEmpty()) {
                 operatorStack.push(op);
             }else {
                 if(priority(op) > priority((String)operatorStack.peek())) {
                     operatorStack.push(op);
                 }
-                if(priority(op) == priority((String)operatorStack.peek())) {
+                else if(priority(op) == priority((String)operatorStack.peek())) {
+                    postStack.add(operatorStack.pop());
                     operatorStack.push(op);
                 }
-                if(priority(op) < priority((String)operatorStack.peek())) {
-                    postStack.add(operatorStack.pop());
+                else if(priority(op) < priority((String)operatorStack.peek())) {
+                    while(operatorStack.size() != 0)
+                        postStack.add(operatorStack.pop());
                     operatorStack.push(op);
                 }
             }
@@ -260,9 +272,9 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()) {
                 case R.id.equal:
                     postStack.add(Integer.parseInt(valueString));
-                    for(int i = 0; i < operatorStack.size(); i++) {
+                   while(operatorStack.size() != 0)
                         postStack.add(operatorStack.pop());
-                    }
+
                     while(postStack.size() > 0) {
                         if (postStack.element().equals("+")) {
                             val1 = (int) calculatorStack.pop();
@@ -296,9 +308,16 @@ public class MainActivity extends AppCompatActivity {
                     result.setText(resultstr);
                     totalString = null;
                     break;
+
+                case R.id.ac:
+                    totalString = null;
+                    valueString = null;
+                    result.setText("");
+                    break;
             }
         }
     };
+    //우선순위 계산 메소드
     public int priority(String op) {
         int priority = 0;
         switch (op) {
